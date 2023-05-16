@@ -8,7 +8,7 @@ ERASMUS APPLICATION PLATFORM - A simple website of the erasmus application for K
  -  Pure HTML, CSS, JavaScript used
  
 ## 👓 Preview
-<img src="https://github.com/GizemUstahuseyin/ProjectKHASErasmusWebI/blob/main/images/ProjectKHASErasmusWebSitesi.mp4" width="75%">
+<img src="https://github.com/GizemUstahuseyin/ProjectKHASErasmusWebI/blob/main/images/readme.mp4" width="75%">
 <img src="" width="75%">
 <img src="" width="75%">
 
