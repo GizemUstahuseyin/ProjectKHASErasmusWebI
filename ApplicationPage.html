@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Başvurular</title>
+
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
+    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b438ee58fc.js" crossorigin="anonymous"></script>
+
+    <script src="session.js"></script>
+
+
+    <style>
+        ul.a {
+            list-style: none;
+        }
+
+            ul.a li::before {
+                content: "\25B7";
+                color: red;
+                font-weight: bold;
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+            }
+
+        ul.b {
+            list-style: none;
+        }
+
+            ul.b li::before {
+                content: "\25CB";
+                color: orange;
+                font-weight: bold;
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+            }
+
+        #confetti {
+            height: 100%;
+            left: 0px;
+            position: fixed;
+            top: 0px;
+            width: 100%;
+            z-index: -1;
+        }
+    </style>
+
+</head>
+<body>
+    <main>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.js"></script>
+        <div id="confetti"></div>
+        <div class="container">
+
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+
+                <a href="index.html" class="d-flex align-items-center mb-2 mb-md-0 text-dark text-decoration-none"><img src="images/logo.jpg" name="logo" id="logo" alt="logo" title="Kadir Has Üniversitesi Öğrencileri" style="width:80px;height:80px"></a>
+
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="index.html" class="nav-link px-2 btn-outline-primary" name="anasayfa" id="anasayfa" title="Anasayfa"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Anasayfa</font></font></a></li>
+
+                    <li><a href="AboutPage.html" class="nav-link px-2 btn-outline-primary" name="hakkinda" id="hakkinda" title="Hakkımızda"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hakkımızda</font></font></a></li>
+
+                    <li><a href="ApplicationPage.html" class="nav-link px-2 text-bg-primary bg-opacity-5 rounded" name="basvuru" id="basvuru" title="Başvuru"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Başvurular</font></font></a></li>
+
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-white dropdown-toggle dropdown-toggle nav-link px-2 text-bg-white bg-opacity-5 rounded caret" name="galeri" id="galeri" title="Galeri" data-bs-toggle="dropdown" aria-expanded="false">
+                            Galeri
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-primary">
+                            <li><a class="dropdown-item nav-link px-2 btn-outline-primary" name="galeri" id="galeri" alt="galeri" title="Galeri" href="Gallery.html">Galeri</a></li>
+                            <li><a class="dropdown-item nav-link px-2 btn-outline-primary" name="foto" id="foto" title="Fotoğraf Arşivimiz" href="GalleryPhotoPage.html">Fotoğraf Arşivimiz</a></li>
+                            <li><a class="dropdown-item nav-link px-2 btn-outline-primary" name="video" id="video" title="Video Arşivimiz" href="GalleryVideoPage.html">Video Arşivimiz</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="AnnouncementsPage.html" class="nav-link px-2 btn-outline-primary" name="duyurular" id="duyurular" title="Duyurular"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Duyurular</font></font></a></li>
+
+                    <li><a href="ContactPage.html" class="nav-link px-2 btn-outline-primary" name="iletisim" id="iletisim" title="İletişim"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">İletişim</font></font></a></li>
+                </ul>
+
+                <div class="text-end">
+                    <div id="btn_div">
+                        <a href="StudentSignInPage.html">
+                            <button type="button" class="btn btn-outline-primary me-2" name="btnGiris" id="btnGiris" title="Giriş"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Giriş Yap</font></font></button>
+                        </a>
+                        <a href="StudentSignUpPage.html"><button type="button" class="btn btn-primary" name="btnKayit" id="btnKayit" title="Kayıt"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kayıt Ol</font></font></button></a>
+                    </div>
+                </div>
+
+                <div class="dropdown text-end" id="profile" style="display:none">
+                    <a href="#" class="d-block link-primary text-decoration-none dropdown-toggle" style="align-items:end" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-circle-user rounded-circle fa-2xl"></i>
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                        <li><a class="dropdown-item" href="StudentProfilePage.html"><font style="vertical-align: inherit;" id="header_sag" onclick="checkLogin()"><font style="vertical-align: inherit;">Profil</font></font></a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#" ><font style="vertical-align: inherit;" id="logout_Div" onclick="logout()"><font style="vertical-align: inherit;">Oturumu Kapat</font></font></a></li>
+                    </ul>
+                </div>
+            </header>
+        </div>
+    </main>
+
+    <div class="row p-5">
+        <div class="col-6">
+            <div class="col d-flex align-items-start">
+                <div class=" d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <i class="fa-solid fa-plane-departure fa-2x" style="color:red"></i>
+                </div>
+                <div name="erasmusBilgileri" id="erasmusBilgileri">
+                    <h3 class="fs-2" style="color:red">Erasmus Programı</h3>
+                    <p><b style="color:red"><i>Program Hakkında</i></b></p>
+                    <p>Erasmus programı kapsamında Almanya, Avusturya, Belçika, Bulgaristan, Çek Cumhuriyeti, Danimarka, Finlandiya, Fransa, Hırvatistan, Hollanda, İngiltere, İspanya, İtalya, Macaristan, Letonya, Litvanya, Polonya, Portekiz, Romanya, Sırbistan, Slovakya, Slovenya ve Yunanistan gibi 20’yi aşkın Avrupa ülkesindeki 106 üniversite ile Erasmus ikili anlaşmamız mevcuttur. Bu üniversitelerden bazıları:</p>
+                    <ul class="a">
+                        <li>Helsinki Metropolia University of Applied Sciences (Finlandiya)</li>
+                        <li>Trinity College Dublin (İrlanda)</li>
+                        <li>Universitat Salzburg (Avusturya)</li>
+                        <li>Universidad de Sevilla (İspanya)</li>
+                        <li>Humbolt - Universitat zu Berlin (Almanya)</li>
+                        <li>University of Venice (İtalya)</li>
+                        <li>Gent University (Belçika)</li>
+                    </ul>
+                    <p>Erasmus programı kapsamında Avrupa Birliği program ülkeleri dışındaki ortak ülkelerden 6 ülke ve 9 üniversite ile anlaşmamız mevcuttur. Değişim Programları çerçevesinde ise tüm dünyada 17 ülkeden 32 üniversite ile anlaşmamız bulunmaktadır. Anlaşmalı olduğumuz üniversitelerden bazıları:</p>
+                    <ul class="a">
+                        <li>Sungkyunkwan University (Güney Kore)</li>
+                        <li>University of Seoul (Güney Kore)</li>
+                        <li>Zhejiang Gongshang University (Çin)</li>
+                        <li>Georgia State University (ABD)</li>
+                        <li>Virgina Technical University (ABD)</li>
+                        <li>University of Delhi (Hindistan)</li>
+                        <li>Simon Fraser University (Kanada)</li>
+                        <li>Universidade Federal de Ouro Preto (Brezilya)</li>
+                    </ul>
+                    <p>Web sitemizi ziyaret etmek için <a href="https://international.khas.edu.tr/" target="_blank" style="color: #d40202 "> <u>tıklayınız</u>.</a></p>
+                    <a href="ApplicationUserPage.html" class="btn btn-danger text-dark" name="btnBasvuruErasmus" id="btnBasvuruErasmus">
+                        Başvuru Yap
+                    </a>
+                    <br /><hr /><br /><br /><br /><br />
+                    <div name="erasmusGorsel" id="erasmusGorsel">
+
+                        <span name="erasmusSpan" id="erasmusSpan" style="opacity: 1; filter: blur(0px) grayscale(0%); border-radius: 0%; transform: scale(1);"><img name="erasmusImg" id="erasmusImg" src="images/applicationImages/image1.jpg"></span>
+
+                        <span name="erasmusSpan" id="erasmusSpan" style="opacity: 1; filter: blur(0px) grayscale(0%); border-radius: 0%; transform: scale(1);"><img name="erasmusImg" id="erasmusImg" src="images/applicationImages/image2.jpg"></span>
+
+                        <span name="erasmusSpan" id="erasmusSpan" style="opacity: 1; filter: blur(0px) grayscale(0%); border-radius: 0%; transform: scale(1);"><img name="erasmusImg" id="erasmusImg" src="images/applicationImages/image3.jpg"></span>
+
+                        <span name="erasmusSpan" id="erasmusSpan" style="opacity: 1; filter: blur(0px) grayscale(0%); border-radius: 0%; transform: scale(1);"><img name="erasmusImg" id="erasmusImg" src="images/applicationImages/image4.jpg"></span>
+
+                        <br /><br /><p>Daha fazla görsel için <a href="GalleryPhotoPage.html" target="_blank" style="color: red "> <u>tıklayınız</u>.</a></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="col d-flex align-items-start">
+                <div class=" d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                    <i class="fa-solid fa-dove fa-2x" style="color:orange"></i>
+                </div>
+                <div name="beyazGuvercinBilgileri" id="beyazGuvercinBilgileri">
+                    <h3 class="fs-2" style="color:orange">Beyaz Güvercinler Programı</h3>
+                    <p><b style="color:orange"><i>Adaylık Şartları</i></b></p>
+                    <p>
+                        Beyaz Güvercinler Burs Programı’na başvuracak adayların aşağıda belirtilen koşulları yerine getirmeleri gerekmektedir:
+                        <ul class="b">
+                            <li>TC vatandaşı olmak,</li>
+                            <li>Eğitim ücretini karşılayamayacak kısıtlı ekonomik şartlara sahip olmak</li>
+                            <li>İkameti İstanbul dışında bulunmak (Lise eğitim-öğretimine İstanbul’da devam eden ancak ailesi İstanbul dışı illerde ikamet eden adaylar, gerekli koşulları sağlamaları halinde Beyaz Güvercinler Bursiyeri olmak üzere başvurabilirler),</li>
+                            <li>Başvuru sırasında lise 12. sınıf öğrencisi olmak,</li>
+                            <li>Tercih etmek istediği programın ilgili puan türündeki başarı sıralamasında ilk 30.000 içinde olmak,</li>
+                            <li>Diploma notu en az 4.0/ 5.0 (100 üzerinden en az 80) olmak,</li>
+                            <li>Okulundan 1., 2. veya 3. olarak mezun olan öğrencilere doğrudan başvuru hakkı verilecektir.</li>
+                        </ul>
+                    </p>
+                    <a href="ApplicationUserPage1.html" class="btn btn-warning" name="btnBasvuruBG" id="btnBasvuruBG">
+                        Başvuru Yap
+                    </a>
+                    <br /><hr /><br />
+                    <div name="erasmusGorsel" id="erasmusGorsel">
+
+                        <span name="erasmusSpan" id="erasmusSpan" style="opacity: 1; filter: blur(0px) grayscale(0%); border-radius: 0%; transform: scale(1);"><img name="erasmusImg" id="erasmusImg" src="images/kolajbeyazguvercin.jpg"></span>
+
+                        <span name="erasmusSpan" id="erasmusSpan" style="opacity: 1; filter: blur(0px) grayscale(0%); border-radius: 0%; transform: scale(1);"><img name="erasmusImg" id="erasmusImg" src="images/kolajbeyazguvercin1.jpg"></span>
+
+                        <br /><br /><p>Daha fazla görsel için <a href="GalleryPhotoPage.html" target="_blank" style="color: orange "> <u>tıklayınız</u>.</a></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="container">
+        <footer class="py-3 my-4">
+
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="index.html" class="nav-link px-2 btn-outline-primary" name="anasayfa" id="anasayfa" title="Anasayfa"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Anasayfa</font></font></a></li>
+
+                <li><a href="AboutPage.html" class="nav-link px-2 btn-outline-primary" name="hakkinda" id="hakkinda" title="Hakkında"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hakkımızda</font></font></a></li>
+
+                <li><a href="ApplicationPage.html" class="nav-link px-2 btn-outline-primary" name="basvuru" id="basvuru" title="Başvuru"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Başvurular</font></font></a></li>
+
+                <li class="nav-item dropdown">
+                    <button class="btn btn-white dropdown-toggle dropdown-toggle nav-link px-2 text-bg-white bg-opacity-5 rounded caret" name="galeri" id="galeri" title="Galeri" data-bs-toggle="dropdown" aria-expanded="false">
+                        Galeri
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-primary">
+                        <li><a class="dropdown-item nav-link px-2 btn-outline-primary" href="Gallery.html">Galeri</a></li>
+                        <li><a class="dropdown-item nav-link px-2 btn-outline-primary" href="GalleryPhotoPage.html">Fotoğraf Arşivimiz</a></li>
+                        <li><a class="dropdown-item nav-link px-2 btn-outline-primary" href="GalleryVideoPage.html">Video Arşivimiz</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="AnnouncementsPage.html" class="nav-link px-2 btn-outline-primary" name="duyurular" id="duyurular" title="Duyurular"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Duyurular</font></font></a></li>
+
+                <li><a href="ContactPage.html" class="nav-link px-2 btn-outline-primary" name="iletisim" id="iletisim" title="İletişim"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">İletişim</font></font></a></li>
+            </ul>
+            <div class="nav p-4 justify-content-center">
+
+                <a href="https://www.facebook.com/Khasedutr"><i class="fa-brands fa-square-facebook fa-2xl ms-3" name="facebook" id="facebook" alt="facebook" title="Facebook"></i></a>
+                <a href="https://twitter.com/khasedutr"><i class="fa-brands fa-square-twitter fa-2xl ms-3" name="twitter" id="twitter" alt="twitter" title="Twitter"></i></a>
+                <a href="https://www.instagram.com/khasedutr/"><i class="fa-brands fa-instagram fa-2xl ms-3" name="instagram" id="instagram" alt="instagram" title="Instagram"></i></a>
+                <a href="https://www.youtube.com/user/KadirHasUniversitesi"><i class="fa-brands fa-youtube fa-2xl ms-3" name="youtube" id="youtube" alt="youtube" title="Youtube"></i></a>
+                <a href="https://www.linkedin.com/school/khasedutr/"><i class="fa-brands fa-linkedin fa-2xl ms-3" name="linkedin" id="linkedin" alt="linkedin" title="Linkedin"></i></a>
+                <a href="https://open.spotify.com/show/588aVTwyamzQqMoIWT2jlY?si=76VIqfE-So61jtFjhv7ggw&utm_source=copy-link&nd=1"><i class="fa-brands fa-spotify fa-2xl ms-3" name="spotify" id="spotify" alt="spotify" title="Spotify"></i></a>
+
+                <div class="col-6"><p class="text-center text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Copyright © Gizem 2023. Tüm Hakları Saklıdır.</font></font></p></div>
+
+            </div>
+
+        </footer>
+    </div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+    <script src="https://codepen.io/juliangarnier/pen/REyzrR/75efae7724dbc3c055e918057fc4aca5.js"></script>
+    <script id="rendered-js">
+        const images = document.querySelectorAll("span");
+
+        images.forEach((image, index) => {
+            image.addEventListener("click", e => {
+                anime({
+                    targets: images,
+                    autoplay: true,
+                    opacity: [
+                        { value: .5, easing: "easeOutSine", duration: 600 },
+                        { value: 1, easing: "easeInOutQuad", duration: 900 }],
+
+                    filter: [
+                        { value: "blur(5px) grayscale(100%)", easing: "easeOutSine", duration: 700 },
+                        { value: "blur(0px) grayscale(0%)", easing: "easeInOutQuad", duration: 1000 }],
+
+                    borderRadius: [
+                        { value: "50%", easing: "easeOutSine", duration: 700 },
+                        { value: "0%", easing: "easeInOutQuad", duration: 1000 }],
+
+                    scale: [
+                        { value: 0.5, easing: "easeOutSine", duration: 600 },
+                        { value: 1, easing: "easeInOutQuad", duration: 1100 }],
+
+                    delay: anime.stagger(200, { grid: [5, 5], from: index })
+                });
+
+            });
+        });
+
+        window.onload = () => document.querySelector('h1').remove();
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll("img").forEach(img => {
+                img.onerror = function () {
+                    this.style.display = "none";
+                };
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            var frameRate = 30;
+            var dt = 1.0 / frameRate;
+            var DEG_TO_RAD = Math.PI / 180;
+            var RAD_TO_DEG = 180 / Math.PI;
+            var colors = [
+                ["#df0049", "#660671"],
+                ["#00e857", "#005291"],
+                ["#2bebbc", "#05798a"],
+                ["#ffd200", "#b06c00"]
+            ];
+
+            function Vector2(_x, _y) {
+                this.x = _x, this.y = _y;
+                this.Length = function () {
+                    return Math.sqrt(this.SqrLength());
+                }
+                this.SqrLength = function () {
+                    return this.x * this.x + this.y * this.y;
+                }
+                this.Equals = function (_vec0, _vec1) {
+                    return _vec0.x == _vec1.x && _vec0.y == _vec1.y;
+                }
+                this.Add = function (_vec) {
+                    this.x += _vec.x;
+                    this.y += _vec.y;
+                }
+                this.Sub = function (_vec) {
+                    this.x -= _vec.x;
+                    this.y -= _vec.y;
+                }
+                this.Div = function (_f) {
+                    this.x /= _f;
+                    this.y /= _f;
+                }
+                this.Mul = function (_f) {
+                    this.x *= _f;
+                    this.y *= _f;
+                }
+                this.Normalize = function () {
+                    var sqrLen = this.SqrLength();
+                    if (sqrLen != 0) {
+                        var factor = 1.0 / Math.sqrt(sqrLen);
+                        this.x *= factor;
+                        this.y *= factor;
+                    }
+                }
+                this.Normalized = function () {
+                    var sqrLen = this.SqrLength();
+                    if (sqrLen != 0) {
+                        var factor = 1.0 / Math.sqrt(sqrLen);
+                        return new Vector2(this.x * factor, this.y * factor);
+                    }
+                    return new Vector2(0, 0);
+                }
+            }
+            Vector2.Lerp = function (_vec0, _vec1, _t) {
+                return new Vector2((_vec1.x - _vec0.x) * _t + _vec0.x, (_vec1.y - _vec0.y) * _t + _vec0.y);
+            }
+            Vector2.Distance = function (_vec0, _vec1) {
+                return Math.sqrt(Vector2.SqrDistance(_vec0, _vec1));
+            }
+            Vector2.SqrDistance = function (_vec0, _vec1) {
+                var x = _vec0.x - _vec1.x;
+                var y = _vec0.y - _vec1.y;
+                return (x * x + y * y + z * z);
+            }
+            Vector2.Scale = function (_vec0, _vec1) {
+                return new Vector2(_vec0.x * _vec1.x, _vec0.y * _vec1.y);
+            }
+            Vector2.Min = function (_vec0, _vec1) {
+                return new Vector2(Math.min(_vec0.x, _vec1.x), Math.min(_vec0.y, _vec1.y));
+            }
+            Vector2.Max = function (_vec0, _vec1) {
+                return new Vector2(Math.max(_vec0.x, _vec1.x), Math.max(_vec0.y, _vec1.y));
+            }
+            Vector2.ClampMagnitude = function (_vec0, _len) {
+                var vecNorm = _vec0.Normalized;
+                return new Vector2(vecNorm.x * _len, vecNorm.y * _len);
+            }
+            Vector2.Sub = function (_vec0, _vec1) {
+                return new Vector2(_vec0.x - _vec1.x, _vec0.y - _vec1.y, _vec0.z - _vec1.z);
+            }
+
+            function EulerMass(_x, _y, _mass, _drag) {
+                this.position = new Vector2(_x, _y);
+                this.mass = _mass;
+                this.drag = _drag;
+                this.force = new Vector2(0, 0);
+                this.velocity = new Vector2(0, 0);
+                this.AddForce = function (_f) {
+                    this.force.Add(_f);
+                }
+                this.Integrate = function (_dt) {
+                    var acc = this.CurrentForce(this.position);
+                    acc.Div(this.mass);
+                    var posDelta = new Vector2(this.velocity.x, this.velocity.y);
+                    posDelta.Mul(_dt);
+                    this.position.Add(posDelta);
+                    acc.Mul(_dt);
+                    this.velocity.Add(acc);
+                    this.force = new Vector2(0, 0);
+                }
+                this.CurrentForce = function (_pos, _vel) {
+                    var totalForce = new Vector2(this.force.x, this.force.y);
+                    var speed = this.velocity.Length();
+                    var dragVel = new Vector2(this.velocity.x, this.velocity.y);
+                    dragVel.Mul(this.drag * this.mass * speed);
+                    totalForce.Sub(dragVel);
+                    return totalForce;
+                }
+            }
+
+            function ConfettiPaper(_x, _y) {
+                this.pos = new Vector2(_x, _y);
+                this.rotationSpeed = Math.random() * 600 + 800;
+                this.angle = DEG_TO_RAD * Math.random() * 360;
+                this.rotation = DEG_TO_RAD * Math.random() * 360;
+                this.cosA = 1.0;
+                this.size = 5.0;
+                this.oscillationSpeed = Math.random() * 1.5 + 0.5;
+                this.xSpeed = 40.0;
+                this.ySpeed = Math.random() * 60 + 50.0;
+                this.corners = new Array();
+                this.time = Math.random();
+                var ci = Math.round(Math.random() * (colors.length - 1));
+                this.frontColor = colors[ci][0];
+                this.backColor = colors[ci][1];
+                for (var i = 0; i < 4; i++) {
+                    var dx = Math.cos(this.angle + DEG_TO_RAD * (i * 90 + 45));
+                    var dy = Math.sin(this.angle + DEG_TO_RAD * (i * 90 + 45));
+                    this.corners[i] = new Vector2(dx, dy);
+                }
+                this.Update = function (_dt) {
+                    this.time += _dt;
+                    this.rotation += this.rotationSpeed * _dt;
+                    this.cosA = Math.cos(DEG_TO_RAD * this.rotation);
+                    this.pos.x += Math.cos(this.time * this.oscillationSpeed) * this.xSpeed * _dt
+                    this.pos.y += this.ySpeed * _dt;
+                    if (this.pos.y > ConfettiPaper.bounds.y) {
+                        this.pos.x = Math.random() * ConfettiPaper.bounds.x;
+                        this.pos.y = 0;
+                    }
+                }
+                this.Draw = function (_g) {
+                    if (this.cosA > 0) {
+                        _g.fillStyle = this.frontColor;
+                    } else {
+                        _g.fillStyle = this.backColor;
+                    }
+                    _g.beginPath();
+                    _g.moveTo(this.pos.x + this.corners[0].x * this.size, this.pos.y + this.corners[0].y * this.size * this.cosA);
+                    for (var i = 1; i < 4; i++) {
+                        _g.lineTo(this.pos.x + this.corners[i].x * this.size, this.pos.y + this.corners[i].y * this.size * this.cosA);
+                    }
+                    _g.closePath();
+                    _g.fill();
+                }
+            }
+            ConfettiPaper.bounds = new Vector2(0, 0);
+
+            function ConfettiRibbon(_x, _y, _count, _dist, _thickness, _angle, _mass, _drag) {
+                this.particleDist = _dist;
+                this.particleCount = _count;
+                this.particleMass = _mass;
+                this.particleDrag = _drag;
+                this.particles = new Array();
+                var ci = Math.round(Math.random() * (colors.length - 1));
+                this.frontColor = colors[ci][0];
+                this.backColor = colors[ci][1];
+                this.xOff = Math.cos(DEG_TO_RAD * _angle) * _thickness;
+                this.yOff = Math.sin(DEG_TO_RAD * _angle) * _thickness;
+                this.position = new Vector2(_x, _y);
+                this.prevPosition = new Vector2(_x, _y);
+                this.velocityInherit = Math.random() * 2 + 4;
+                this.time = Math.random() * 100;
+                this.oscillationSpeed = Math.random() * 2 + 2;
+                this.oscillationDistance = Math.random() * 40 + 40;
+                this.ySpeed = Math.random() * 40 + 80;
+                for (var i = 0; i < this.particleCount; i++) {
+                    this.particles[i] = new EulerMass(_x, _y - i * this.particleDist, this.particleMass, this.particleDrag);
+                }
+                this.Update = function (_dt) {
+                    var i = 0;
+                    this.time += _dt * this.oscillationSpeed;
+                    this.position.y += this.ySpeed * _dt;
+                    this.position.x += Math.cos(this.time) * this.oscillationDistance * _dt;
+                    this.particles[0].position = this.position;
+                    var dX = this.prevPosition.x - this.position.x;
+                    var dY = this.prevPosition.y - this.position.y;
+                    var delta = Math.sqrt(dX * dX + dY * dY);
+                    this.prevPosition = new Vector2(this.position.x, this.position.y);
+                    for (i = 1; i < this.particleCount; i++) {
+                        var dirP = Vector2.Sub(this.particles[i - 1].position, this.particles[i].position);
+                        dirP.Normalize();
+                        dirP.Mul((delta / _dt) * this.velocityInherit);
+                        this.particles[i].AddForce(dirP);
+                    }
+                    for (i = 1; i < this.particleCount; i++) {
+                        this.particles[i].Integrate(_dt);
+                    }
+                    for (i = 1; i < this.particleCount; i++) {
+                        var rp2 = new Vector2(this.particles[i].position.x, this.particles[i].position.y);
+                        rp2.Sub(this.particles[i - 1].position);
+                        rp2.Normalize();
+                        rp2.Mul(this.particleDist);
+                        rp2.Add(this.particles[i - 1].position);
+                        this.particles[i].position = rp2;
+                    }
+                    if (this.position.y > ConfettiRibbon.bounds.y + this.particleDist * this.particleCount) {
+                        this.Reset();
+                    }
+                }
+                this.Reset = function () {
+                    this.position.y = -Math.random() * ConfettiRibbon.bounds.y;
+                    this.position.x = Math.random() * ConfettiRibbon.bounds.x;
+                    this.prevPosition = new Vector2(this.position.x, this.position.y);
+                    this.velocityInherit = Math.random() * 2 + 4;
+                    this.time = Math.random() * 100;
+                    this.oscillationSpeed = Math.random() * 2.0 + 1.5;
+                    this.oscillationDistance = Math.random() * 40 + 40;
+                    this.ySpeed = Math.random() * 40 + 80;
+                    var ci = Math.round(Math.random() * (colors.length - 1));
+                    this.frontColor = colors[ci][0];
+                    this.backColor = colors[ci][1];
+                    this.particles = new Array();
+                    for (var i = 0; i < this.particleCount; i++) {
+                        this.particles[i] = new EulerMass(this.position.x, this.position.y - i * this.particleDist, this.particleMass, this.particleDrag);
+                    }
+                }
+                this.Draw = function (_g) {
+                    for (var i = 0; i < this.particleCount - 1; i++) {
+                        var p0 = new Vector2(this.particles[i].position.x + this.xOff, this.particles[i].position.y + this.yOff);
+                        var p1 = new Vector2(this.particles[i + 1].position.x + this.xOff, this.particles[i + 1].position.y + this.yOff);
+                        if (this.Side(this.particles[i].position.x, this.particles[i].position.y, this.particles[i + 1].position.x, this.particles[i + 1].position.y, p1.x, p1.y) < 0) {
+                            _g.fillStyle = this.frontColor;
+                            _g.strokeStyle = this.frontColor;
+                        } else {
+                            _g.fillStyle = this.backColor;
+                            _g.strokeStyle = this.backColor;
+                        }
+                        if (i == 0) {
+                            _g.beginPath();
+                            _g.moveTo(this.particles[i].position.x, this.particles[i].position.y);
+                            _g.lineTo(this.particles[i + 1].position.x, this.particles[i + 1].position.y);
+                            _g.lineTo((this.particles[i + 1].position.x + p1.x) * 0.5, (this.particles[i + 1].position.y + p1.y) * 0.5);
+                            _g.closePath();
+                            _g.stroke();
+                            _g.fill();
+                            _g.beginPath();
+                            _g.moveTo(p1.x, p1.y);
+                            _g.lineTo(p0.x, p0.y);
+                            _g.lineTo((this.particles[i + 1].position.x + p1.x) * 0.5, (this.particles[i + 1].position.y + p1.y) * 0.5);
+                            _g.closePath();
+                            _g.stroke();
+                            _g.fill();
+                        } else if (i == this.particleCount - 2) {
+                            _g.beginPath();
+                            _g.moveTo(this.particles[i].position.x, this.particles[i].position.y);
+                            _g.lineTo(this.particles[i + 1].position.x, this.particles[i + 1].position.y);
+                            _g.lineTo((this.particles[i].position.x + p0.x) * 0.5, (this.particles[i].position.y + p0.y) * 0.5);
+                            _g.closePath();
+                            _g.stroke();
+                            _g.fill();
+                            _g.beginPath();
+                            _g.moveTo(p1.x, p1.y);
+                            _g.lineTo(p0.x, p0.y);
+                            _g.lineTo((this.particles[i].position.x + p0.x) * 0.5, (this.particles[i].position.y + p0.y) * 0.5);
+                            _g.closePath();
+                            _g.stroke();
+                            _g.fill();
+                        } else {
+                            _g.beginPath();
+                            _g.moveTo(this.particles[i].position.x, this.particles[i].position.y);
+                            _g.lineTo(this.particles[i + 1].position.x, this.particles[i + 1].position.y);
+                            _g.lineTo(p1.x, p1.y);
+                            _g.lineTo(p0.x, p0.y);
+                            _g.closePath();
+                            _g.stroke();
+                            _g.fill();
+                        }
+                    }
+                }
+                this.Side = function (x1, y1, x2, y2, x3, y3) {
+                    return ((x1 - x2) * (y3 - y2) - (y1 - y2) * (x3 - x2));
+                }
+            }
+            ConfettiRibbon.bounds = new Vector2(0, 0);
+            confetti = {};
+            confetti.Context = function (parent) {
+                var i = 0;
+                var canvasParent = document.getElementById(parent);
+                var canvas = document.createElement('canvas');
+                canvas.width = canvasParent.offsetWidth;
+                canvas.height = canvasParent.offsetHeight;
+                canvasParent.appendChild(canvas);
+                var context = canvas.getContext('2d');
+                var interval = null;
+                var confettiRibbonCount = 7;
+                var rpCount = 30;
+                var rpDist = 8.0;
+                var rpThick = 8.0;
+                var confettiRibbons = new Array();
+                ConfettiRibbon.bounds = new Vector2(canvas.width, canvas.height);
+                for (i = 0; i < confettiRibbonCount; i++) {
+                    confettiRibbons[i] = new ConfettiRibbon(Math.random() * canvas.width, -Math.random() * canvas.height * 2, rpCount, rpDist, rpThick, 45, 1, 0.05);
+                }
+                var confettiPaperCount = 25;
+                var confettiPapers = new Array();
+                ConfettiPaper.bounds = new Vector2(canvas.width, canvas.height);
+                for (i = 0; i < confettiPaperCount; i++) {
+                    confettiPapers[i] = new ConfettiPaper(Math.random() * canvas.width, Math.random() * canvas.height);
+                }
+                this.resize = function () {
+                    canvas.width = canvasParent.offsetWidth;
+                    canvas.height = canvasParent.offsetHeight;
+                    ConfettiPaper.bounds = new Vector2(canvas.width, canvas.height);
+                    ConfettiRibbon.bounds = new Vector2(canvas.width, canvas.height);
+                }
+                this.start = function () {
+                    this.stop()
+                    var context = this
+                    this.interval = setInterval(function () {
+                        confetti.update();
+                    }, 1000.0 / frameRate)
+                }
+                this.stop = function () {
+                    clearInterval(this.interval);
+                }
+                this.update = function () {
+                    var i = 0;
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                    for (i = 0; i < confettiPaperCount; i++) {
+                        confettiPapers[i].Update(dt);
+                        confettiPapers[i].Draw(context);
+                    }
+                    for (i = 0; i < confettiRibbonCount; i++) {
+                        confettiRibbons[i].Update(dt);
+                        confettiRibbons[i].Draw(context);
+                    }
+                }
+            }
+            var confetti = new confetti.Context('confetti');
+            confetti.start();
+            $(window).resize(function () {
+                confetti.resize();
+            });
+        });
+    </script>
+</body>
+<script>checkLogin();</script>
+</html>

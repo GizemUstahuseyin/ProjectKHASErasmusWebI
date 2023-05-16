@@ -1,0 +1,25 @@
+
+section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background:#ffffff;
+}
+    section.text {
+        position: relative;
+        text-align: center;
+        color: black;
+        margin: 40px;
+        max-width: 650px;
+    }
+section .text span {
+    position: relative;
+    display:inline-block;
+}
+text-end-header_sag-btn_div{
+    border-style:double;
+}

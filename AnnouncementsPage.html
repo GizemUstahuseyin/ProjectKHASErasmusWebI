@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Duyurular</title>
+
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b438ee58fc.js" crossorigin="anonymous"></script>
+
+    <script src="session.js"></script>
+
+    <style>
+        body {
+            margin: auto;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            overflow: auto;
+            background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+            animation: gradient 15s ease infinite;
+            background-size: 400% 400%;
+            background-attachment: fixed;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 0%;
+            }
+
+            50% {
+                background-position: 100% 100%;
+            }
+
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+
+        .wave {
+            background: rgb(255 255 255 / 25%);
+            border-radius: 1000% 1000% 0 0;
+            position: fixed;
+            width: 200%;
+            height: 12em;
+            animation: wave 10s -3s linear infinite;
+            transform: translate3d(0, 0, 0);
+            opacity: 0.8;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+            .wave:nth-of-type(2) {
+                bottom: -1.25em;
+                animation: wave 18s linear reverse infinite;
+                opacity: 0.8;
+            }
+
+            .wave:nth-of-type(3) {
+                bottom: -2.5em;
+                animation: wave 20s -1s reverse infinite;
+                opacity: 0.9;
+            }
+
+        @keyframes wave {
+            2% {
+                transform: translateX(1);
+            }
+
+            25% {
+                transform: translateX(-25%);
+            }
+
+            50% {
+                transform: translateX(-50%);
+            }
+
+            75% {
+                transform: translateX(-25%);
+            }
+
+            100% {
+                transform: translateX(1);
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <main>
+        <div class="container">
+
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+
+                <a href="index.html" class="d-flex align-items-center mb-2 mb-md-0 text-dark text-decoration-none"><img src="images/logo.jpg" name="logo" id="logo" alt="logo" title="Kadir Has Üniversitesi Öğrencileri" style="width:80px;height:80px"></a>
+
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="index.html" class="nav-link px-2 btn-outline-primary" name="anasayfa" id="anasayfa" title="Anasayfa"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Anasayfa</font></font></a></li>
+
+                    <li><a href="AboutPage.html" class="nav-link px-2 btn-outline-primary" name="hakkinda" id="hakkinda" title="Hakkımızda"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hakkımızda</font></font></a></li>
+
+                    <li><a href="ApplicationPage.html" class="nav-link px-2 btn-outline-primary" name="basvuru" id="basvuru" title="Başvuru"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Başvurular</font></font></a></li>
+
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-white dropdown-toggle dropdown-toggle nav-link px-2 text-bg-white bg-opacity-5 rounded caret" name="galeri" id="galeri" title="Galeri" data-bs-toggle="dropdown" aria-expanded="false">
+                            Galeri
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-primary">
+                            <li><a class="dropdown-item nav-link px-2 btn-outline-primary" name="galeri" id="galeri" alt="galeri" title="Galeri" href="Gallery.html">Galeri</a></li>
+                            <li><a class="dropdown-item nav-link px-2 btn-outline-primary" name="foto" id="foto" title="Fotoğraf Arşivimiz" href="GalleryPhotoPage.html">Fotoğraf Arşivimiz</a></li>
+                            <li><a class="dropdown-item nav-link px-2 btn-outline-primary" name="video" id="video" title="Video Arşivimiz" href="GalleryVideoPage.html">Video Arşivimiz</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="AnnouncementsPage.html" class="nav-link px-2 text-bg-primary bg-opacity-5 rounded" name="duyurular" id="duyurular" title="Duyurular"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Duyurular</font></font></a></li>
+
+                    <li><a href="ContactPage.html" class="nav-link px-2 btn-outline-primary" name="iletisim" id="iletisim" title="İletişim"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">İletişim</font></font></a></li>
+                </ul>
+
+                <div class="text-end">
+                    <div id="btn_div">
+                        <a href="StudentSignInPage.html">
+                            <button type="button" class="btn btn-outline-primary me-2" name="btnGiris" id="btnGiris" title="Giriş"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Giriş Yap</font></font></button>
+                        </a>
+                        <a href="StudentSignUpPage.html"><button type="button" class="btn btn-primary" name="btnKayit" id="btnKayit" title="Kayıt"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kayıt Ol</font></font></button></a>
+                    </div>
+                </div>
+
+                <div class="dropdown text-end" id="profile" style="display:none">
+                    <a href="#" class="d-block link-primary text-decoration-none dropdown-toggle" style="align-items:end" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-circle-user rounded-circle fa-2xl"></i>
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                        <li><a class="dropdown-item" href="StudentProfilePage.html"><font style="vertical-align: inherit;" id="header_sag" onclick="checkLogin()"><font style="vertical-align: inherit;">Profil</font></font></a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#" ><font style="vertical-align: inherit;" id="logout_Div" onclick="logout()"><font style="vertical-align: inherit;">Oturumu Kapat</font></font></a></li>
+                    </ul>
+                </div>
+            </header>
+        </div>
+    </main>
+
+    <div class="row align-items-md-stretch px-5">
+        <div class="col-md-6">
+            <div class="h-100 p-5 text-bg-primary rounded-3" name="duyuruYatayGecis" id="duyuruYatayGecis" style="border-color:white;border-style: solid">
+                <h2>2022-2023 Bahar Yarıyılı Kurum İçi Yatay Geçiş Sonuçları</h2>
+                <h5>23 Ocak 2023</h5>
+                <p><a href="https://yataygecis.khas.edu.tr/sonuc" class="link-light"> 2022-2023 Bahar Yarıyılı kurum için yatay geçiş sonuçlarını incelemek için lütfen tıklayınız.</a></p>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="h-100 p-5 bg-danger rounded-3" name="duyuruMuhendislikFinalTakvimi" id="duyuruMuhendislikFinalTakvimi" style="border-color:white;border-style: solid">
+                <h2>Mühendislik ve Doğa Bilimleri Fakültesi 2022-2023 Güz Dönemi Final Takvimi</h2>
+                <h5>9 Aralık 2022</h5>
+                <p><a href="https://www.khas.edu.tr/wp-content/uploads/2022/12/FENS-2022-2023-Fall-Semester-Final-Exams-Schedule-1.pdf" class="link-dark"> MDBF 2022-2023 Güz Dönemi Final Takvimi’ni incelemek için tıklayınız.</a></p>
+            </div>
+        </div>
+
+    </div><br /><br />
+
+    <div class="row align-items-md-stretch px-5">
+        <div class="col-md-6" name="duyuruSosyalBilFinalTakvimi" id="duyuruSosyalBilFinalTakvimi">
+            <div class="h-100 p-5 text-bg-success rounded-3" style="border-color:white;border-style: solid">
+                <h2>İktisadi, İdari ve Sosyal Bilimler Fakültesi 2022-2023 Güz Dönemi Final Takvimi</h2>
+                <h5>8 Aralık 2022</h5>
+                <p><a href="https://www.khas.edu.tr/wp-content/uploads/2022/12/IISBF-2022-2023-Guz-Final-Programi-web.xlsx" class="link-light">İİSBF 2022-2023 Güz Dönemi Final Takvimi’ni incelemek için tıklayınız.</a></p>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="h-100 p-5 text-bg-warning rounded-3" name="duyuruİletisimFakFinalTakvimi" id="duyuruİletisimFakFinalTakvimi" style="border-color:white;border-style: solid">
+                <h2>İletişim Fakültesi 2022-2023 Güz Dönemi Final Takvimi</h2>
+                <h5>24 Kasım 2022</h5>
+                <p><a href="https://www.khas.edu.tr/wp-content/uploads/2022/11/ILEF-2022-2023-Guz-Donemi-Final-Sinav-Programi.xls" class="link-dark">İletişim Fakültesi 2022-2023 Güz Dönemi Final Takvimi’ni incelemek için tıklayınız.</a></p>
+            </div>
+        </div>
+
+    </div><br /><br />
+
+    <div class="row align-items-md-stretch px-5">
+        <div class="col-md-6">
+            <div class="h-100 p-5 text-bg-info rounded-3" name="duyuruSanatFakFinalTakvimi" id="duyuruSanatFakFinalTakvimi" style="border-color:white;border-style: solid">
+                <h2>Sanat ve Tasarım Fakültesi 2022-2023 Güz Dönemi Final Takvimi</h2>
+                <h5>22 Kasım 2022</h5>
+                <p><a href="https://www.khas.edu.tr/wp-content/uploads/2022/12/STF-2022-2023-GUZ-DONEMI-FINAL-TAKVIMI.xlsx" class="link-dark">Sanat ve Tasarım Fakültesi 2022-2023 Güz Dönemi Final Takvimi’ni incelemek için tıklayınız.</a></p>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="h-100 p-5 bg-light rounded-3" name="duyuruEkYerlestirme" id="duyuruEkYerlestirme" style="border-color:white;border-style: solid">
+                <h2>2022 YKS Ek Yerleştirme Kayıtları Hakkında Bilgilendirme</h2>
+                <h5>20 Eylül 2022</h5>
+                <p><a href="https://www.khas.edu.tr/kayit-kabul/" class="link-dark">2022 YKS EK Yerleştirme Kayıtları hakkında bilgi almak için lütfen tıklayınız.</a></p>
+            </div>
+        </div>
+
+    </div><br /><br />
+
+    <hr />
+
+    <div class="container">
+        <footer class="py-3 my-4">
+
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="index.html" class="nav-link px-2 btn-outline-primary" name="anasayfa" id="anasayfa" title="Anasayfa"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Anasayfa</font></font></a></li>
+
+                <li><a href="AboutPage.html" class="nav-link px-2 btn-outline-primary" name="hakkinda" id="hakkinda" title="Hakkında"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hakkımızda</font></font></a></li>
+
+                <li><a href="ApplicationPage.html" class="nav-link px-2 btn-outline-primary" name="basvuru" id="basvuru" title="Başvuru"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Başvurular</font></font></a></li>
+
+                <li class="nav-item dropdown">
+                    <button class="btn btn-white dropdown-toggle dropdown-toggle nav-link px-2 text-bg-white bg-opacity-5 rounded caret" name="galeri" id="galeri" title="Galeri" data-bs-toggle="dropdown" aria-expanded="false">
+                        Galeri
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-primary">
+                        <li><a class="dropdown-item nav-link px-2 btn-outline-primary" href="Gallery.html">Galeri</a></li>
+                        <li><a class="dropdown-item nav-link px-2 btn-outline-primary" href="GalleryPhotoPage.html">Fotoğraf Arşivimiz</a></li>
+                        <li><a class="dropdown-item nav-link px-2 btn-outline-primary" href="GalleryVideoPage.html">Video Arşivimiz</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="AnnouncementsPage.html" class="nav-link px-2 btn-outline-primary" name="duyurular" id="duyurular" title="Duyurular"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Duyurular</font></font></a></li>
+
+                <li><a href="ContactPage.html" class="nav-link px-2 btn-outline-primary" name="iletisim" id="iletisim" title="İletişim"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">İletişim</font></font></a></li>
+            </ul>
+            <div class="nav p-4 justify-content-center">
+
+                <a href="https://www.facebook.com/Khasedutr"><i class="fa-brands fa-square-facebook fa-2xl ms-3" name="facebook" id="facebook" alt="facebook" title="Facebook"></i></a>
+                <a href="https://twitter.com/khasedutr"><i class="fa-brands fa-square-twitter fa-2xl ms-3" name="twitter" id="twitter" alt="twitter" title="Twitter"></i></a>
+                <a href="https://www.instagram.com/khasedutr/"><i class="fa-brands fa-instagram fa-2xl ms-3" name="instagram" id="instagram" alt="instagram" title="Instagram"></i></a>
+                <a href="https://www.youtube.com/user/KadirHasUniversitesi"><i class="fa-brands fa-youtube fa-2xl ms-3" name="youtube" id="youtube" alt="youtube" title="Youtube"></i></a>
+                <a href="https://www.linkedin.com/school/khasedutr/"><i class="fa-brands fa-linkedin fa-2xl ms-3" name="linkedin" id="linkedin" alt="linkedin" title="Linkedin"></i></a>
+                <a href="https://open.spotify.com/show/588aVTwyamzQqMoIWT2jlY?si=76VIqfE-So61jtFjhv7ggw&utm_source=copy-link&nd=1"><i class="fa-brands fa-spotify fa-2xl ms-3" name="spotify" id="spotify" alt="spotify" title="Spotify"></i></a>
+
+                <div class="col-6"><p class="text-center text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Copyright © Gizem 2023. Tüm Hakları Saklıdır.</font></font></p></div>
+
+            </div>
+
+
+
+        </footer>
+    </div>
+</body>
+<script>checkLogin();</script>
+</html>

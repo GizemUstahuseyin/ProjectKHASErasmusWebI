@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Kayıt Ol</title>
+
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
+
+    <script src="https://kit.fontawesome.com/b438ee58fc.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
+    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Sacramento:400' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/b438ee58fc.js" crossorigin="anonymous"></script>
+    <script src="session.js"></script>
+
+    <style>
+        h1 {
+            animation: pulsate 1.5s infinite alternate;
+            border: 0.2rem solid #fff;
+            border-radius: 2rem;
+            padding: 0.4em;
+            box-shadow: 0 0 .2rem #fff, 0 0 .2rem #fff, 0 0 2rem #052afc, 0 0 0.8rem #052afc, 0 0 2.8rem #052afc, inset 0 0 1.3rem #052afc;
+            left: 10%;
+            right: 10%;
+        }
+    </style>
+
+    <script>
+
+
+        function sifreKontrol() {
+
+            var kullanici = [(document.getElementById("Email").value), (document.getElementById("Sifre").value)];
+
+            var sifre2 = document.getElementById("SifreTekrar").value;
+
+            var yazi = document.getElementById("sonuc");
+
+            // E-posta adresi deseni tanımı
+            var emailDeseni = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (emailDeseni.test(kullanici[0]) && kullanici[1] == sifre2) {
+                yazi.innerHTML = "Hesap Oluşturuldu!";
+                yazi.style.color = "green";
+                sessionStorage.setItem("user", kullanici);
+                setTimeout(function () {
+                    window.location.href = "StudentSignInPage.html";
+                }, 1000);
+            }
+            else {
+                yazi.innerHTML = "E-posta adresi geçerli değil veya Şifreler Eşleşmiyor.";
+                yazi.style.color = "red";
+            }
+        }
+</script>
+
+</head>
+<body>
+    <main>
+        <div class="container">
+
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+
+                <a href="index.html" class="d-flex align-items-center mb-2 mb-md-0 text-dark text-decoration-none"><img src="images/logo.jpg" name="logo" id="logo" alt="logo" title="Kadir Has Üniversitesi Öğrencileri" style="width:80px;height:80px"></a>
+
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="index.html" class="nav-link px-2 btn-outline-primary" name="anasayfa" id="anasayfa" title="Anasayfa"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Anasayfa</font></font></a></li>
+
+                    <li><a href="AboutPage.html" class="nav-link px-2 btn-outline-primary" name="hakkinda" id="hakkinda" title="Hakkımızda"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hakkımızda</font></font></a></li>
+
+                    <li><a href="ApplicationPage.html" class="nav-link px-2 btn-outline-primary" name="basvuru" id="basvuru" title="Başvuru"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Başvurular</font></font></a></li>
+
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-white dropdown-toggle dropdown-toggle nav-link px-2 text-bg-white bg-opacity-5 rounded caret" name="galeri" id="galeri" title="Galeri" data-bs-toggle="dropdown" aria-expanded="false">
+                            Galeri
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-primary">
+                            <li><a class="dropdown-item nav-link px-2 btn-outline-primary" name="galeri" id="galeri" alt="galeri" title="Galeri" href="Gallery.html">Galeri</a></li>
+                            <li><a class="dropdown-item nav-link px-2 btn-outline-primary" name="foto" id="foto" title="Fotoğraf Arşivimiz" href="GalleryPhotoPage.html">Fotoğraf Arşivimiz</a></li>
+                            <li><a class="dropdown-item nav-link px-2 btn-outline-primary" name="video" id="video" title="Video Arşivimiz" href="GalleryVideoPage.html">Video Arşivimiz</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="AnnouncementsPage.html" class="nav-link px-2 btn-outline-primary" name="duyurular" id="duyurular" title="Duyurular"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Duyurular</font></font></a></li>
+
+                    <li><a href="ContactPage.html" class="nav-link px-2 btn-outline-primary" name="iletisim" id="iletisim" title="İletişim"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">İletişim</font></font></a></li>
+                </ul>
+
+                <div class=" text-end">
+                    <a href="StudentSignInPage.html">
+                        <button type="button" class="btn btn-outline-primary me-2" name="btnGiris" id="btnGiris" title="Giriş"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Giriş Yap</font></font></button>
+                    </a>
+                    <a href="StudentSignUpPage.html"><button type="button" class="btn btn-primary" name="btnKayit" id="btnKayit" title="Kayıt"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kayıt Ol</font></font></button></a>
+                </div>
+                <div class="text-end"><button type="button" id="logout_Div" class="btn btn-primary" style="display:none" onclick="logout()">Çıkış</button></div>
+
+            </header>
+        </div>
+    </main>
+
+    <center>
+        <h1 class="neonText m-5">
+
+            <div class="row p-5" name="kayitol" id="kayitol">
+                <div class="col-6">
+                    <form class="form-signin was-validated" novalidate>
+                        <br />
+                        <h2 class="mb-3 font-weight-normal" style="color:blue">KAYIT</h2><hr /><br />
+                        <i class="fa-solid fa-envelope fa-l" style="color:blue"></i>
+                        <input type="email" id="Email" name="Email" class="form-control" placeholder="E-Mail Adresiniz" style="width:65%;border-color:blue" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/><div class="invalid-feedback" style="font-size:13px;color:red">Geçerli bir e-posta adresi girilmelidir, örneğin; ornek@gmail.com</div><br />
+
+                        <i class="fa-solid fa-lock" style="color:blue"></i>
+                        <input type="password" id="Sifre" name="Sifre" class="form-control" placeholder="Şifreniz" style="width:65%;border-color:blue" required>
+                        <div class="checkbox mb-3"></div>
+                        <input type="password" id="SifreTekrar" name="SifreTekrar" class="form-control" placeholder="Şifreniz (Tekrar)" required="" style="width:65%;border-color:blue"><div class="invalid-feedback" style="font-size:13px;color:red">Şifreler aynı ve en az 6 karakter olmalıdır, en az bir küçük harf, bir büyük harf, en az bir rakam ve en az bir sembol içermelidir.</div>
+                        <div class="checkbox mb-3" style="color:blue;font-size:15px;">
+                            <br /><label>
+                                <input type="checkbox" value="remember-me"> Beni Hatırla
+                            </label>
+                        </div>
+                    </form>
+                    <h5 id="sonuc" style="font-size:15px"></h5>
+                    <a href="#"><button class="btn btn-primary" type="button" id="signin" style="height:7%; width:15%; position:center;" onclick="sifreKontrol()"><center>Kayıt Ol</center></button></a>
+                </div>
+                <img src="images/signup.jpg" id="signin" style="height:50% ; width:50%;" />
+                <div class="col-1"></div>
+
+            </div>
+        </h1>
+    </center>
+
+    <hr />
+
+    <div class="container">
+        <footer class="py-3 my-4">
+
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="index.html" class="nav-link px-2 btn-outline-primary" name="anasayfa" id="anasayfa" title="Anasayfa"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Anasayfa</font></font></a></li>
+
+                <li><a href="AboutPage.html" class="nav-link px-2 btn-outline-primary" name="hakkinda" id="hakkinda" title="Hakkında"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hakkımızda</font></font></a></li>
+
+                <li><a href="ApplicationPage.html" class="nav-link px-2 btn-outline-primary" name="basvuru" id="basvuru" title="Başvuru"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Başvurular</font></font></a></li>
+
+                <li class="nav-item dropdown">
+                    <button class="btn btn-white dropdown-toggle dropdown-toggle nav-link px-2 text-bg-white bg-opacity-5 rounded caret" name="galeri" id="galeri" title="Galeri" data-bs-toggle="dropdown" aria-expanded="false">
+                        Galeri
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-primary">
+                        <li><a class="dropdown-item nav-link px-2 btn-outline-primary" href="Gallery.html">Galeri</a></li>
+                        <li><a class="dropdown-item nav-link px-2 btn-outline-primary" href="GalleryPhotoPage.html">Fotoğraf Arşivimiz</a></li>
+                        <li><a class="dropdown-item nav-link px-2 btn-outline-primary" href="GalleryVideoPage.html">Video Arşivimiz</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="AnnouncementsPage.html" class="nav-link px-2 btn-outline-primary" name="duyurular" id="duyurular" title="Duyurular"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Duyurular</font></font></a></li>
+
+                <li><a href="ContactPage.html" class="nav-link px-2 btn-outline-primary" name="iletisim" id="iletisim" title="İletişim"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">İletişim</font></font></a></li>
+            </ul>
+            <div class="nav p-4 justify-content-center">
+
+                <a href="https://www.facebook.com/Khasedutr"><i class="fa-brands fa-square-facebook fa-2xl ms-3" name="facebook" id="facebook" alt="facebook" title="Facebook"></i></a>
+                <a href="https://twitter.com/khasedutr"><i class="fa-brands fa-square-twitter fa-2xl ms-3" name="twitter" id="twitter" alt="twitter" title="Twitter"></i></a>
+                <a href="https://www.instagram.com/khasedutr/"><i class="fa-brands fa-instagram fa-2xl ms-3" name="instagram" id="instagram" alt="instagram" title="Instagram"></i></a>
+                <a href="https://www.youtube.com/user/KadirHasUniversitesi"><i class="fa-brands fa-youtube fa-2xl ms-3" name="youtube" id="youtube" alt="youtube" title="Youtube"></i></a>
+                <a href="https://www.linkedin.com/school/khasedutr/"><i class="fa-brands fa-linkedin fa-2xl ms-3" name="linkedin" id="linkedin" alt="linkedin" title="Linkedin"></i></a>
+                <a href="https://open.spotify.com/show/588aVTwyamzQqMoIWT2jlY?si=76VIqfE-So61jtFjhv7ggw&utm_source=copy-link&nd=1"><i class="fa-brands fa-spotify fa-2xl ms-3" name="spotify" id="spotify" alt="spotify" title="Spotify"></i></a>
+
+                <div class="col-6"><p class="text-center text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Copyright © Gizem 2023. Tüm Hakları Saklıdır.</font></font></p></div>
+
+            </div>
+
+        </footer>
+    </div>
+
+</body>
+</html>

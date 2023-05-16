@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>İletişim</title>
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
+    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b438ee58fc.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+
+    <script src="session.js"></script>
+
+
+    <style>
+        button {
+            background-color: cadetblue;
+            color: whitesmoke;
+            border: 0;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            font-size: 18px;
+            font-weight: 500;
+            border-radius: 7px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        #info {
+            background: cornflowerblue;
+            color: white;
+            bottom: 3%;
+            width: 100px;
+            height: 50px;
+            border-radius: 10px;
+            border-color: dodgerblue;
+            border: double;
+        }
+
+        .wrapper {
+            display: grid;
+            place-items: center;
+        }
+
+        .typing-demo {
+            width: 28ch;
+            animation: typing 4s steps(28), blink .5s step-end infinite alternate;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            font-family: monospace;
+            font-size: 2em;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <main>
+        <div class="container">
+
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+
+                <a href="index.html" class="d-flex align-items-center mb-2 mb-md-0 text-dark text-decoration-none"><img src="images/logo.jpg" name="logo" id="logo" alt="logo" title="Kadir Has Üniversitesi Öğrencileri" style="width:80px;height:80px"></a>
+
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="index.html" class="nav-link px-2 btn-outline-primary" name="anasayfa" id="anasayfa" title="Anasayfa"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Anasayfa</font></font></a></li>
+
+                    <li><a href="AboutPage.html" class="nav-link px-2 btn-outline-primary" name="hakkinda" id="hakkinda" title="Hakkımızda"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hakkımızda</font></font></a></li>
+
+                    <li><a href="ApplicationPage.html" class="nav-link px-2 btn-outline-primary" name="basvuru" id="basvuru" title="Başvuru"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Başvurular</font></font></a></li>
+
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-white dropdown-toggle dropdown-toggle nav-link px-2 text-bg-white bg-opacity-5 rounded caret" name="galeri" id="galeri" title="Galeri" data-bs-toggle="dropdown" aria-expanded="false">
+                            Galeri
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-primary">
+                            <li><a class="dropdown-item nav-link px-2 btn-outline-primary" name="galeri" id="galeri" alt="galeri" title="Galeri" href="Gallery.html">Galeri</a></li>
+                            <li><a class="dropdown-item nav-link px-2 btn-outline-primary" name="foto" id="foto" title="Fotoğraf Arşivimiz" href="GalleryPhotoPage.html">Fotoğraf Arşivimiz</a></li>
+                            <li><a class="dropdown-item nav-link px-2 btn-outline-primary" name="video" id="video" title="Video Arşivimiz" href="GalleryVideoPage.html">Video Arşivimiz</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="AnnouncementsPage.html" class="nav-link px-2 btn-outline-primary" name="duyurular" id="duyurular" title="Duyurular"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Duyurular</font></font></a></li>
+
+                    <li><a href="ContactPage.html" class="nav-link px-2 text-bg-primary bg-opacity-5 rounded" name="iletisim" id="iletisim" title="İletişim"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">İletişim</font></font></a></li>
+                </ul>
+
+                <div class="text-end">
+                    <div id="btn_div">
+                        <a href="StudentSignInPage.html">
+                            <button type="button" class="btn btn-outline-primary me-2" name="btnGiris" id="btnGiris" title="Giriş"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Giriş Yap</font></font></button>
+                        </a>
+                        <a href="StudentSignUpPage.html"><button type="button" class="btn btn-primary" name="btnKayit" id="btnKayit" title="Kayıt"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kayıt Ol</font></font></button></a>
+                    </div>
+                </div>
+
+                <div class="dropdown text-end" id="profile" style="display:none">
+                    <a href="#" class="d-block link-primary text-decoration-none dropdown-toggle" style="align-items:end" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-circle-user rounded-circle fa-2xl"></i>
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                        <li><a class="dropdown-item" href="StudentProfilePage.html"><font style="vertical-align: inherit;" id="header_sag" onclick="checkLogin()"><font style="vertical-align: inherit;">Profil</font></font></a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><font style="vertical-align: inherit;" id="logout_Div" onclick="logout()"><font style="vertical-align: inherit;">Oturumu Kapat</font></font></a></li>
+                    </ul>
+                </div>
+            </header>
+        </div>
+    </main>
+    <div class="container">
+        <div class=" wrapper row">
+            <div class="typing-demo col-lg-8 col-xl-6 text-center mx-auto">
+                <h6 class="text-primary">Bize Ulaşın</h6>
+                <h2 class="mb-4">Yardım etmek için burdayız!</h2>
+            </div>
+        </div>
+
+        <div class="row g-4 g-md-5 mt-0 mt-lg-3">
+            <div class="col-lg-4 mt-lg-0">
+                <div class="card card-body bg-primary shadow py-5 text-center h-100">
+                    <h5 class="text-white mb-3">ADRES</h5>
+                    <ul class="list-inline mb-0" name="khasMap" id="khasMap">
+                        <li class="list-item mb-3">
+                            <a href="https://goo.gl/maps/iRjbGysDSKMWFzoX6" class="text-white">
+                                <i class="fas fa-fw fa-map-marker-alt me-2 mt-1"></i>
+                                Cibali Mah. Kadir Has Cad. 34083 Fatih / İSTANBUL
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-lg-0">
+                <div class="card card-body shadow py-5 text-center h-100" style="color:blue">
+                    <h5 class="mb-3">İLETİŞİM</h5>
+                    <ul class="list-inline mb-0" name="telefon" id="telefon">
+                        <li class="list-item mb-3">
+                            <a href="+902125336532" class="text-blue">
+                                <i class="fas fa-fw fa-phone-alt me-2"></i>Telefon: +90 212 533 65 32
+                            </a>
+                        </li>
+                        <li class="list-item mb-3">
+                            <a href="+902126319150" class="text-blue">
+                                <i class="fas fa-fw fa-phone-alt me-2"></i>Faks: +90 212 631 91 50
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mt-lg-0">
+                <div class="card card-body bg-primary shadow py-5 text-center h-100" name="emailIletisim" id="emailIletisim">
+                    <h5 class="text-white mb-3">E-MAİL</h5>
+                    <ul class="list-inline mb-0">
+                        <li class="list-item mb-0">
+                            <a href="mailto:danisma@khas.edu.tr" class="text-white">
+                                <i class="far fa-fw fa-envelope me-2"></i>danisma@khas.edu.tr
+                            </a>
+                        </li>
+                        <li class="list-item mb-0">
+                            <a href="mailto:khas@hs01.kep.tr" class="text-white">
+                                <i class="far fa-fw fa-envelope me-2"></i>khas@hs01.kep.trexample@email.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div><br /><br />
+    <section class="pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" name="mapIletisim" id="mapIletisim">
+                    <iframe class="w-100 h-400px grayscale rounded" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3010.013934759269!2d28.956785215251944!3d41.02495107929912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9f12ab56e17%3A0x9485bbf687d7cbfd!2sKadir%20Has%20%C3%9Cniversitesi!5e0!3m2!1str!2str!4v1675268674181!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section><br /><br /><br />
+    <div class="container">
+        <div class="row g-4 g-lg-0 align-items-center">
+
+            <div class="col-md-6 align-items-center text-center">
+                <img src="images/call.jpg" alt="Call Us" name="callUs" id="callUs" style="width:80%;width:80%">
+
+            </div><br /><br>
+
+            <div class="col-md-6">
+                <h2 class="mt-4 mt-md-0">HADİ KONUŞALIM!</h2>
+                <p>Doğrudan bizimle iletişime geçin veya formu doldurun, size hemen geri dönelim.</p>
+
+                <form id="form1">
+                    <div class="mb-4 bg-light-input">
+                        <label for="yourName" class="form-label">Adın *</label>
+                        <input type="text" class="form-control form-control-lg" id="yourName" name="yourName" required>
+                    </div>
+                    <div class="mb-4 bg-light-input">
+                        <label for="emailInput" class="form-label">E-Mail Adresin *</label>
+                        <input type="email" class="form-control form-control-lg" id="emailInput" name="emailInput" required>
+                    </div>
+                    <div class="mb-4 bg-light-input">
+                        <label for="message" class="form-label">Mesajın *</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea><br />                                <button type="submit" style="text-align:center; background-color:blue; padding:10px">Gönder</button>
+                    </div>
+                </form>
+            </div>
+
+            <script>
+                function control(formId) {
+                    let invalids = document.getEIementById(formId).querySelectorAll(': invalid').length,
+                        button = document.getEIementById(formId).querySeIector('button[type="submit"]');
+
+                    if (invalids == 0) {
+                        prompt("Mesajınız gönderildi!");
+                        button.removeAttribute('disabled');
+
+                    }
+                    else {
+                        button.setAttribute('disabled', 'disabled');
+                    }
+                }
+            </script>
+
+        </div>
+    </div>
+    <hr />
+
+    <div class="container">
+        <footer class="py-3 my-4">
+
+            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="index.html" class="nav-link px-2 btn-outline-primary" name="anasayfa" id="anasayfa" title="Anasayfa"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Anasayfa</font></font></a></li>
+
+                <li><a href="AboutPage.html" class="nav-link px-2 btn-outline-primary" name="hakkinda" id="hakkinda" title="Hakkında"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hakkımızda</font></font></a></li>
+
+                <li><a href="ApplicationPage.html" class="nav-link px-2 btn-outline-primary" name="basvuru" id="basvuru" title="Başvuru"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Başvurular</font></font></a></li>
+
+                <li class="nav-item dropdown">
+                    <button class="btn btn-white dropdown-toggle dropdown-toggle nav-link px-2 text-bg-white bg-opacity-5 rounded caret" name="galeri" id="galeri" title="Galeri" data-bs-toggle="dropdown" aria-expanded="false">
+                        Galeri
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-primary">
+                        <li><a class="dropdown-item nav-link px-2 btn-outline-primary" href="Gallery.html">Galeri</a></li>
+                        <li><a class="dropdown-item nav-link px-2 btn-outline-primary" href="GalleryPhotoPage.html">Fotoğraf Arşivimiz</a></li>
+                        <li><a class="dropdown-item nav-link px-2 btn-outline-primary" href="GalleryVideoPage.html">Video Arşivimiz</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="AnnouncementsPage.html" class="nav-link px-2 btn-outline-primary" name="duyurular" id="duyurular" title="Duyurular"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Duyurular</font></font></a></li>
+
+                <li><a href="ContactPage.html" class="nav-link px-2 btn-outline-primary" name="iletisim" id="iletisim" title="İletişim"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">İletişim</font></font></a></li>
+            </ul>
+            <div class="nav p-4 justify-content-center">
+
+                <a href="https://www.facebook.com/Khasedutr"><i class="fa-brands fa-square-facebook fa-2xl ms-3" name="facebook" id="facebook" alt="facebook" title="Facebook"></i></a>
+                <a href="https://twitter.com/khasedutr"><i class="fa-brands fa-square-twitter fa-2xl ms-3" name="twitter" id="twitter" alt="twitter" title="Twitter"></i></a>
+                <a href="https://www.instagram.com/khasedutr/"><i class="fa-brands fa-instagram fa-2xl ms-3" name="instagram" id="instagram" alt="instagram" title="Instagram"></i></a>
+                <a href="https://www.youtube.com/user/KadirHasUniversitesi"><i class="fa-brands fa-youtube fa-2xl ms-3" name="youtube" id="youtube" alt="youtube" title="Youtube"></i></a>
+                <a href="https://www.linkedin.com/school/khasedutr/"><i class="fa-brands fa-linkedin fa-2xl ms-3" name="linkedin" id="linkedin" alt="linkedin" title="Linkedin"></i></a>
+                <a href="https://open.spotify.com/show/588aVTwyamzQqMoIWT2jlY?si=76VIqfE-So61jtFjhv7ggw&utm_source=copy-link&nd=1"><i class="fa-brands fa-spotify fa-2xl ms-3" name="spotify" id="spotify" alt="spotify" title="Spotify"></i></a>
+
+                <div class="col-6"><p class="text-center text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Copyright © Gizem 2023. Tüm Hakları Saklıdır.</font></font></p></div>
+
+            </div>
+
+        </footer>
+    </div>
+</body>
+<script>checkLogin();</script>
+</html>
